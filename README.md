@@ -58,7 +58,7 @@ End with tilde ~
     "brightCyan": "#34E2E2",
     "brightWhite": "#EEEEEE"
   }
-]~ //Notice this tilde ~, this is important
+]
 ```
 
 You will get a sorted array of schemes
