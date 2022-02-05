@@ -7,7 +7,6 @@ settings.json from Windows Terminal
 
 ## Usage
 Pass everything in bracket after "schemes" key including brackets as string.
-End with tilde ~
 
 #### Example String
 ```json
@@ -61,7 +60,7 @@ End with tilde ~
 ]
 ```
 
-You will get a sorted array of schemes
+You will get a sorted array of schemes.
 
 ## Code implementation
 ```golang
