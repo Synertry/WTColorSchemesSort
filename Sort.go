@@ -15,7 +15,7 @@ import (
 // Sort need the array from the schemes key including the brackets [] as string
 // returns sorted json string
 func Sort(str string) (string, error) {
-	sortedSchemes, err := ParseSchemes(str)
+	sortedSchemes, err := parseSchemes(str)
 	if err != nil {
 		return fmt.Sprintf("%+v", sortedSchemes), err
 	}

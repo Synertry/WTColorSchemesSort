@@ -11,14 +11,14 @@ import (
 	"encoding/json"
 )
 
-// ColorSchemes is a helper struct for parsing and sorting
-type ColorSchemes struct {
-	Schemes []ColorScheme `json:"schemes,required"`
+// colorSchemes is a helper struct for parsing and sorting
+type colorSchemes struct {
+	Schemes []colorScheme `json:"schemes,required"`
 }
 
-// ColorScheme ordered after ColorScheme.cpp from TerminalSettingsModel
+// colorScheme ordered after ColorScheme.cpp from TerminalSettingsModel
 // https://github.com/microsoft/terminal/blob/094273b995352ff9d80f36279c297488b756df1d/src/cascadia/TerminalSettingsModel/ColorScheme.cpp#L151
-type ColorScheme struct {
+type colorScheme struct {
 	Name                string `json:"name,omitempty"`
 	Foreground          string `json:"foreground,omitempty"`
 	Background          string `json:"background,omitempty"`
@@ -42,8 +42,8 @@ type ColorScheme struct {
 	BrightWhite         string `json:"brightWhite,omitempty"`
 }
 
-// ParseSchemes core sorting mechanism
-func ParseSchemes(str string) (colorSchemes ColorSchemes, err error) {
+// parseSchemes core sorting mechanism
+func parseSchemes(str string) (colorSchemes colorSchemes, err error) {
 	err = json.Unmarshal([]byte(str), &colorSchemes.Schemes)
 	return
 }
