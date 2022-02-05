@@ -6,7 +6,7 @@ Go 1.17+ (I have used this, but actual required version to run could be lower)
 settings.json from Windows Terminal
 
 ## Usage
-Pass everything in bracket after "schemes" key including brackets.
+Pass everything in bracket after "schemes" key including brackets as string.
 End with tilde ~
 
 #### Example String
@@ -62,3 +62,9 @@ End with tilde ~
 ```
 
 You will get a sorted array of schemes
+
+## Code implementation
+```golang
+// unsortedJSON is the schemes array including brackets as string
+sortedJSON := WTColorSchemesSort.Sort(unsortedJSON)
+```
