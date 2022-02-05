@@ -1,0 +1,57 @@
+//for application use, if you want to build it
+//you will need to run 'go mod tidy' for dependencies
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"strings"
+
+	"github.com/Synertry/GoSysUtils/Cmdline"
+	"golang.design/x/clipboard"
+)
+
+func main() { // rename package to main, if you want to build this
+	intro()
+	schemes, err := ParseSchemes(getInput())
+	errCheck(err)
+	fmt.Printf("%+v\n", schemes)
+
+	prettyStruct, err := PrettyStruct(schemes)
+	prettyStruct = fmt.Sprintf("\t%s", strings.Trim(prettyStruct, "{}\r\n\t\"schemes: "))
+	errCheck(err)
+
+	fmt.Println("Here is your sorted list of color schemes:")
+	fmt.Println(prettyStruct)
+
+	clipboard.Write(clipboard.FmtText, []byte(prettyStruct))
+	fmt.Printf("\njson has been written to your clipboard\n")
+
+	Cmdline.Timeout(3)
+}
+
+func intro() {
+	fmt.Println("Paste your schemes from windows terminal settings JSON.")
+	fmt.Println("Everything in brackets after schemes key:↓")
+	fmt.Println("\"schemes\": \nfrom here →\t[\n\t\t\t...\nto here →\t]")
+	fmt.Println("Confirm with ~ at the end and press enter")
+}
+
+func errCheck(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
+// getInput reads from os.Stdin until ~
+func getInput() string {
+	reader := bufio.NewReader(os.Stdin)
+	in, err := reader.ReadString('~')
+	if err != nil {
+		in = ""
+	}
+	in = strings.Trim(in, "~")
+
+	return in
+}
