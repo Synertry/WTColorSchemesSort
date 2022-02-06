@@ -5,6 +5,7 @@
  *           https://www.boost.org/LICENSE_1_0.txt)
  */
 
+//WTColorSchemeSort is a json array sorter for the color schemes of Windows Terminal settings.json
 package WTColorSchemesSort
 
 import (
@@ -12,7 +13,7 @@ import (
 	"strings"
 )
 
-// Sort need the array from the schemes key including the brackets [] as string
+// Sort needs the array from the schemes key including the brackets [] as string
 // returns sorted json string
 func Sort(str string) (string, error) {
 	sortedSchemes, err := parseSchemes(str)
