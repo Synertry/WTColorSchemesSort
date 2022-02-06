@@ -1,4 +1,6 @@
 # WTColorSchemesSort
+[![Go Reference](https://pkg.go.dev/badge/github.com/Synertry/WTColorSchemesSort.svg)](https://pkg.go.dev/github.com/Synertry/WTColorSchemesSort)
+
 Sorts the color schemes jsonfield-entries in your Windows Terminal settings.json.
 
 ## Requirements
