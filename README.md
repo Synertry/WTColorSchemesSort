@@ -1,5 +1,6 @@
 # WTColorSchemesSort
 [![Go Reference](https://pkg.go.dev/badge/github.com/Synertry/WTColorSchemesSort.svg)](https://pkg.go.dev/github.com/Synertry/WTColorSchemesSort)
+[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
 Sorts the color schemes jsonfield-entries in your Windows Terminal settings.json.
 
